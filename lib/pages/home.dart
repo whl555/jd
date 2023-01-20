@@ -54,36 +54,40 @@ class _HomePageState extends State<HomePage> {
                   buildAspectRatio(),
                   buildLogos(),
                   buildSecondBuy(),
-                  SizedBox(
-                    height: 104,
-                    child: DecoratedBox(
-                      decoration: const BoxDecoration(color: Colors.white),
-                      child: ListView.builder(
-                          itemCount: 6,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            return Column(
-                              children: [
-                                Image.asset(
-                                  "assets/image/quick${index + 1}.jpg",
-                                  width: 85,
-                                  height: 85,
-                                ),
-                                const Text(
-                                  "hello",
-                                  style: AppTheme.headline5,
-                                )
-                              ],
-                            );
-                          }),
-                    ),
-                  ),
+                  buildQuicks(),
                   buildAds()
                 ],
               );
             }),
           ),
         ));
+  }
+
+  SizedBox buildQuicks() {
+    return SizedBox(
+                  height: 104,
+                  child: DecoratedBox(
+                    decoration: const BoxDecoration(color: Colors.white),
+                    child: ListView.builder(
+                        itemCount: 6,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            children: [
+                              Image.asset(
+                                "assets/image/quick${index + 1}.jpg",
+                                width: 85,
+                                height: 85,
+                              ),
+                              const Text(
+                                "hello",
+                                style: AppTheme.headline5,
+                              )
+                            ],
+                          );
+                        }),
+                  ),
+                );
   }
 
   Widget buildSecondBuy() {
