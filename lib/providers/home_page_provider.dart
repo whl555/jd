@@ -32,4 +32,10 @@ class HomePageProvider with ChangeNotifier {
     });
 
   }
+
+  void resume() {
+    isError = false;
+    isLoading = false;
+    notifyListeners();
+  }
 }
