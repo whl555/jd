@@ -31,7 +31,27 @@ class _PersonPageState extends State<PersonPage> {
             width: width,
             height: width,
             fit: BoxFit.cover,
-          )
+          ),
+
+        GestureDetector(
+          onTap: () async {
+            final results = await AssetPicker.pickAssets(context, pickerConfig: AssetPickerConfig(selectedAssets: picks));
+            setState(() {
+              picks.clear();
+              picks.addAll(results!);
+            });
+          },
+          child: Container(
+            width: width,
+            height: width,
+            color: Colors.black12,
+            child: const Icon(
+              Icons.add,
+              size: 48,
+              color: Colors.grey,
+            ),
+          ),
+        )
       ]);
     });
   }
